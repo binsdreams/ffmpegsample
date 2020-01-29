@@ -1,4 +1,4 @@
-**This sample usage some of feature available on ffmpeg library**
+### This sample usage some of feature available on ffmpeg library
 
 This is usage of ffmpeg libray some of capabilities like Mixing multiple files, changes the tempo,asetrate,aecho ,corus options to make differnt voice effects.
 This repo contains sample app and ffmpec wrapper library named Audioeffects
@@ -32,3 +32,18 @@ This is way you can use effects with options in library
   Options options = new Options.Builder(Effects.ROBOT, fileName, fileNameNew).build();
   mediaConverter.execute(options);
 ```
+
+##License Copyright 2020 -
+binsdreams@gmail.com
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
