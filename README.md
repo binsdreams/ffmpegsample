@@ -6,9 +6,9 @@ This repo contains sample app and ffmpec wrapper library named Audioeffects
 ## How to use Audio effects library
 
 Here we are following library to use ffmpeg capability
-
+```
 implementation 'com.arthenica:mobile-ffmpeg-full:4.2.2.LTS'
-
+```
 This is created with Java android library.
 
 FFMpegMediaConverter.java is class which has following functions
@@ -33,9 +33,9 @@ This is way you can use effects with options in library
   mediaConverter.execute(options);
 ```
 
-##License Copyright 2020 -
-binsdreams@gmail.com
+### License Copyright 2020 -binsdreams@gmail.com
 
+```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -47,3 +47,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+```
