@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ccc"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#FFFFFF"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/recorder"
+                android:textAllCaps="true"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivNext"
+                android:tint="#000"
+                android:visibility="gone"
+                android:onClick="onClick"
+                android:layout_width="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/ic_done_black_24dp"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/add_music"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+    <Button
+        android:id="@+id/btCreative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:onClick="onClick"
+        android:text="@string/mind"
+        app:layout_constraintEnd_toStartOf="@+id/btIdea"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <Button
+        android:id="@+id/btIdea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:onClick="onClick"
+        android:text="@string/idea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <Button
+        android:id="@+id/btHey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:onClick="onClick"
+        android:text="@string/hey"
+        app:layout_constraintStart_toEndOf="@+id/btIdea"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_30"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btDrops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_white_round"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="@string/drops"
+        app:layout_constraintBottom_toTopOf="@+id/showMerges"
+        app:layout_constraintEnd_toStartOf="@+id/btClaps" />
+
+    <Button
+        android:id="@+id/btYeehaw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_white_round"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="@string/yehaw"
+        app:layout_constraintBottom_toTopOf="@+id/showMerges"
+        app:layout_constraintStart_toEndOf="@+id/btClaps" />
+
+    <Button
+        android:id="@+id/btClaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_white_round"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="@string/claps"
+        app:layout_constraintBottom_toTopOf="@+id/showMerges"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/showMerges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF"
+        android:onClick="showArrayMerge"
+        android:text="merge multiple files"
+        app:layout_constraintBottom_toTopOf="@+id/btRecord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF"
+        android:onClick="onClick"
+        android:text="@string/record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
