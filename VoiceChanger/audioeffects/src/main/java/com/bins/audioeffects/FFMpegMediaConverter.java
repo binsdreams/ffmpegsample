@@ -94,7 +94,54 @@ public class FFMpegMediaConverter {
         String commands = "-i " + sourceRecording.getFilePath() +getFileNamesMerged(effects) +
                 " -filter_complex "+getDelayParamsMerged(effects) +
                  getMixParamsMerged(effects)+
-                " -map [mixout] -c:v copy " + destination;
+                " -map [mixout] -c:v copy -c:a aac -b:a 192k " + destination;
+        String[] cmd1 = commands.split(" ");
+        int rc = FFmpeg.execute(cmd1);
+        if (rc == RETURN_CODE_SUCCESS) {
+            mFFMepcCallback.onSuccess(cmd1);
+        } else if (rc == RETURN_CODE_CANCEL) {
+            mFFMepcCallback.onCancel(cmd1);
+        } else {
+            mFFMepcCallback.onFailed(cmd1, rc, "");
+        }
+    }
+
+    /**
+     *
+     * @param sourceFilePath
+     * @param outFilePath
+     * @param startOffset in seconds
+     * @param endOffset in seconds
+     */
+    public void trimFile(String sourceFilePath,String outFilePath,int startOffset,int endOffset){
+        File file = new File(outFilePath);
+        if (file.exists()) {
+            file.delete();
+        }
+
+        String commands = "-i "+sourceFilePath+" -ss "+startOffset+" -to "+endOffset+" -c copy "+outFilePath;
+        String[] cmd1 = commands.split(" ");
+        int rc = FFmpeg.execute(cmd1);
+        if (rc == RETURN_CODE_SUCCESS) {
+            mFFMepcCallback.onSuccess(cmd1);
+        } else if (rc == RETURN_CODE_CANCEL) {
+            mFFMepcCallback.onCancel(cmd1);
+        } else {
+            mFFMepcCallback.onFailed(cmd1, rc, "");
+        }
+    }
+
+    /**
+     *convert any file using aac encoder
+     * @param sourceFilePath
+     * @param outFilePath
+     */
+    public void convertToAccFile(String sourceFilePath,String outFilePath){
+        File file = new File(outFilePath);
+        if (file.exists()) {
+            file.delete();
+        }
+        String commands = "-i "+sourceFilePath+" -c:a aac -b:a 192k "+outFilePath;
         String[] cmd1 = commands.split(" ");
         int rc = FFmpeg.execute(cmd1);
         if (rc == RETURN_CODE_SUCCESS) {

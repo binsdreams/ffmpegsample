@@ -175,7 +175,7 @@ public class VoiceRecorderActivity extends AppCompatActivity {
         AudioFile[] effects = new AudioFile[]{
                 clap,yeehaw
         };
-        outFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/outfile21.mp3";
+        outFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/outfile21.aac";
 
 
 
